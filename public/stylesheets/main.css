@@ -1,0 +1,44 @@
+
+
+#row {
+	background-color: #116611;
+	height: 100px;
+	border-radius: 5px;
+}
+
+#row h2 {
+	color: #FFFFFF;
+	margin: 10px 10px;
+}
+
+.wrapper {
+	margin: 0 auto;
+	width: 700px;
+	height: 2000px;
+	background-color: #D8D8D8;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#list h4{
+	text-align: center;
+}	
+
+#panel {
+	background-color: #6AADC7;
+	border-radius: 5px; 
+	margin-top: 10px;
+}
+
+#panelbox {
+	padding: 10px;
+}
+
+#textfield input {
+	resize: horizontal;
+	width: 70%;
+}
+
+#textboxwrap {
+	max-width: 220px; 
+}

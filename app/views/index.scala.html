@@ -1,0 +1,45 @@
+@(taskForm: Form[Task], tasks: List[Task])
+
+@import helper._
+
+@main("To Do List") {
+
+    <div class="row">
+    	<div id="row" class="span12">
+    		<h2>ToDoList</h2>
+    	</div>
+    </div>
+
+    <div class="row">
+    	<div class="span4" id="panel">
+    		<div id="panelbox">
+	    		<h4>Add a task</h4>
+	    		@form(routes.Application.addItem()) {
+	    		<div id="textfield">@inputText(taskForm("label"), args = 'placeholder -> "new task...")</div>
+	    		<div id="textboxwrap">
+	    			<input type="submit" value="Create" class="btn-success">
+	    		</div>
+    		}
+    		</div>
+    	</div>
+
+    	<div class="span8" id="list">
+    		@if(tasks.size() == 1) {
+    		<h4>@tasks.size() task</h4>
+    		} else {
+    		<h4>@tasks.size() tasks</h4>
+    	}
+    		<ul>
+    			@for(task <- tasks) {
+    			<li>
+    				@task.label
+    				@form(routes.Application.deleteItem(task.id)) {
+    				<input type="submit" value="Delete">
+    			}
+    			</li>
+    			}
+    		</ul>
+    	</div>
+    </div>
+
+}
